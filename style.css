@@ -1,0 +1,77 @@
+body {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom right, #e0f7fa, #f0f4f8); 
+  padding-top: 30px;
+  min-height: 100vh;
+  margin: 0;
+}
+
+
+#sudoku-board {
+  display: grid;
+  grid-template-columns: repeat(9, 40px);
+  grid-template-rows: repeat(9, 40px);
+  gap: 0;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+input {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  font-size: 18px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+
+input:nth-child(odd) {
+  background-color: #e6f7ff;
+}
+input:nth-child(even) {
+  background-color: #ffffff;
+}
+
+
+#sudoku-board input {
+  border: 1px solid #aaa;
+}
+
+#sudoku-board input:nth-child(3n) {
+  border-right: 3px solid #333;
+}
+#sudoku-board input:nth-child(n+19):nth-child(-n+27),
+#sudoku-board input:nth-child(n+46):nth-child(-n+54),
+#sudoku-board input:nth-child(n+73):nth-child(-n+81) {
+  border-bottom: 3px solid #333;
+}
+#sudoku-board input:nth-child(n):nth-child(-n+9) {
+  border-top: 3px solid #333;
+}
+#sudoku-board input:nth-child(9n+1) {
+  border-left: 3px solid #333;
+}
+
+input:focus {
+  outline: none;
+  border: 2px solid #007bff;
+  background-color: #d0ebff;
+}
+
+.buttons {
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #007bff;
+  color: white;
+}
